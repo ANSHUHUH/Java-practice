@@ -1,0 +1,16 @@
+ import java.util.Scanner;
+public class LowertoupperCase {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String upper ,lower;
+Scanner sc = new Scanner(System.in);
+System.out.println("enter a string : ");
+String word = sc.nextLine();
+upper = word.toUpperCase();
+lower = word.toLowerCase();
+System.out.println("entered string : "+word+" | upper : "+upper+" | lower : "+lower);
+
+	}
+
+}
