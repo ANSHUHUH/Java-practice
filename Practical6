@@ -1,0 +1,34 @@
+package practice;
+import java.util.Scanner;
+
+public class Practical6 {
+	String name,qualification,department;
+	double salary;
+	public void getdetails() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter name : ");
+		name = sc.nextLine();
+		System.out.println("enter qualification : ");
+		qualification = sc.nextLine();
+		System.out.println("enter department : ");
+		department = sc.nextLine();
+		System.out.println("enter salary : ");
+		salary = sc.nextDouble();
+	}
+	public void displaydetails() {
+		System.out.println("employee name : "+name);
+		System.out.println("employee qualification : "+qualification);
+		System.out.println("employee department : "+department);
+		System.out.println("employee salary : "+salary);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Practical6 e1 = new Practical6();
+e1.getdetails();
+System.out.println("\n \n ========employee details======== \n");
+e1.displaydetails();
+
+	}
+
+}
