@@ -1,0 +1,77 @@
+package practice;
+import java.util.Scanner;
+interface shape{
+	public double getarea();
+}
+class Rectangle implements shape{
+	float h,w;
+	Rectangle(float h, float w){
+		this.h=h;
+		this.w=w;
+	}
+	public double getarea(){
+		return h*w;
+	}
+}
+class circle implements shape{
+	float r;
+	circle(float r){
+		this.r=r;
+	}
+	public double getarea(){
+		return 3.14*(r*r);
+	}
+}
+class  triangle implements shape{
+	float l,b;
+	triangle (float l, float b){
+		this.l=l;
+		this.b=b;
+	}
+	public double getarea(){
+		return (l*b)/2;
+	}
+}
+
+
+public class Interfacepractice{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	Scanner sc = new Scanner(System.in);
+	System.out.println("============choose option===========");
+	System.out.println("type 1 to get area of rectangle \n");
+	System.out.println("type 2 to get area of circle \n");
+	System.out.println("type 3 to get area of triangle \n");
+	int opt = sc.nextInt();
+	switch(opt){
+		case 1 :
+			System.out.println("enter the height of rectangle : ");
+			float h= sc.nextFloat();
+			System.out.println("enter the width of rectangle : ");
+			float w= sc.nextFloat();
+		    Rectangle r = new Rectangle( h,w);
+		    System.out.println("area of rectangle : "+r.getarea());
+		    break;
+		case 2:
+			System.out.println("enter the radius of circle : ");
+			float radius = sc.nextFloat();
+		    circle c = new circle(radius);
+		    System.out.println("area of circle : "+c.getarea());
+		    break;
+		case 3:
+		    System.out.println("enter the length of triangle : ");
+			float l= sc.nextFloat();
+			System.out.println("enter the breath of  triangle : ");
+			float b= sc.nextFloat();
+		    triangle t = new triangle(l,b);
+		    System.out.println("area of  triangle : "+t.getarea());
+		    break;
+		default :
+			System.out.println("invalid option ");
+			
+	}
+	
+	}
+
+}
