@@ -1,0 +1,30 @@
+package practice;
+import java.util.Scanner;
+interface shape{
+	public double getarea();
+}
+class Rectangle implements shape{
+	float h,w;
+	Rectangle(float h, float w){
+		this.h=h;
+		this.w=w;
+	}
+	public double getarea(){
+		return h*w;
+	}
+}
+
+public class Interfacepractice{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	Scanner sc = new Scanner(System.in);
+	System.out.println("enter the height of rectangle : ");
+	float h= sc.nextFloat();
+	System.out.println("enter the width of rectangle : ");
+	float w= sc.nextFloat();
+Rectangle r = new Rectangle( h,w);
+System.out.println("area of rectangle : "+r.getarea());
+	}
+
+}
