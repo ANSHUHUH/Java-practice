@@ -1,0 +1,16 @@
+package practice;
+
+public class Practice11111 {
+	static void checknum(int a) throws exception{
+		if(a>1000) {
+			throw new exception("out of range");
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
