@@ -1,0 +1,17 @@
+package awt;
+import java.awt.*;
+
+public class Firstprogram {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		        Frame f = new Frame("My First AWT Program");
+
+		        f.setSize(400, 300);
+		        f.setVisible(true);
+		    }
+		}
+	
+
+
