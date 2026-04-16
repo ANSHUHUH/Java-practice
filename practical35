@@ -1,0 +1,29 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class Practical35 extends JPanel{
+protected void paintComponent(Graphics g) {
+	super.paintComponent(g);
+	
+	g.setColor(Color.yellow);
+	g.fillOval(50, 50, 200, 200);
+	
+	g.setColor(Color.black);
+	g.fillOval(90, 100, 20, 20);
+	g.fillOval(190, 100, 20, 20);
+	
+	g.drawArc(90, 130, 120, 80, 0, -180);
+	 
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+JFrame f = new JFrame();
+Practical35 panel = new Practical35();
+f.add(panel);
+
+f.setSize(500 ,500);
+f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+f.setVisible(true);
+	}
+
+}
