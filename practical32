@@ -1,0 +1,51 @@
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+public class Practical32 extends JFrame implements ActionListener{
+JRadioButton red,blue,green;
+ButtonGroup bg;
+
+Practical32(){
+	setTitle("color changer");
+	setLayout(new FlowLayout(FlowLayout.CENTER));
+	
+	red = new JRadioButton("red") ;
+	blue = new JRadioButton("blue");
+	green =  new JRadioButton("green");
+	bg = new ButtonGroup();
+	
+	bg.add(red);
+	bg.add(blue);
+	bg.add(green);
+	
+	add(red);
+	add(blue);
+	add(green);
+	
+	red.addActionListener(this);
+	blue.addActionListener(this);
+	green.addActionListener(this);
+	
+	setSize(300,300);
+	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	setVisible(true);
+	
+	
+}
+public void actionPerformed(ActionEvent e) {
+	if(red.isSelected()) {
+		getContentPane().setBackground(Color.red);
+		
+	}else if(blue.isSelected()) {
+		getContentPane().setBackground(Color.blue);
+	}else if(green.isSelected()) {
+		getContentPane().setBackground(Color.green);
+	}
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+new Practical32();
+	}
+
+}
