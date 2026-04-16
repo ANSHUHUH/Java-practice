@@ -1,0 +1,33 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+public class Practical36 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JFrame f = new JFrame("display name");
+		JLabel l = new JLabel("enter name : ");
+		JTextField t = new JTextField(30);
+		JButton b = new JButton("submit");
+		JLabel result = new JLabel("");
+		
+		
+		f.add(l);
+		f.add(t);
+		f.add(b);
+		f.add(result);
+		
+		b.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String name = t.getText();
+				result.setText("hello,  "+name);
+			}
+		});
+		f.setSize(400,400);
+		f.setLayout(new FlowLayout(FlowLayout.CENTER));
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f.setVisible(true);
+		
+	}
+
+}
