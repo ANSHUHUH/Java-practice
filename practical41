@@ -1,0 +1,30 @@
+import java.awt.*;
+import java.awt.event.*;
+public class Practical41 extends Frame{
+Checkbox swim,dance,reading,writing;
+ Practical41(){
+	setSize(400,300);
+	setLayout(new FlowLayout(FlowLayout.CENTER));
+	
+	swim = new Checkbox("swimming");
+	dance  = new Checkbox("dancing");
+	reading  = new Checkbox("reading");
+	writing  = new Checkbox("writing");
+	 
+	add(swim);
+	add(dance);
+	add(reading);
+	add(writing);
+	
+	addWindowListener(new WindowAdapter() {
+	public void	windowClosing(WindowEvent e){
+			System.exit(0);
+		}
+	});
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+new Practical40();
+	}
+
+}
