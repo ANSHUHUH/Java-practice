@@ -1,0 +1,48 @@
+import java.awt.*;
+import java.awt.event.*;
+public class Practical40 extends Frame implements ActionListener{
+	Button b;
+	Choice c;
+	Label l;
+	Practical40(){
+		setSize(500,500);
+		setLayout(null);
+		
+		
+		c = new Choice();
+		  c.add("swimming");
+		  c.add("dancing");
+		  c.add("reading");
+		  c.add("riding");
+		  
+		  c.setBounds(100, 100, 200, 600);
+		  add(c);
+		  l = new Label("selected : ");
+		  l.setBounds(100, 200, 150, 20);
+		  add(l);
+		  
+		b = new Button("show");
+		b.setBounds(150, 250, 100, 70);
+		add(b);
+		b.addActionListener(this);
+		
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+			}
+		});
+		setVisible(true);
+		}
+	public void actionPerformed(ActionEvent we) {
+		 String s = c.getSelectedItem();
+		 
+		 l.setText("selected : "+s);
+		 
+		}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+               Practical40 p = new Practical40();
+	}
+
+}
