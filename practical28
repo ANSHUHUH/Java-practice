@@ -1,0 +1,30 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+public class Practical28 extends JFrame implements ActionListener{
+	JButton btn;
+	Practical28(){
+		setLayout(new FlowLayout());
+		btn = new JButton("OK");
+		add(btn);
+		btn.addActionListener(this);
+		setSize(400,300);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+	}
+	public void actionPerformed(ActionEvent ae) {
+		if(btn.getText().equals("OK"))
+		btn.setText("KO");
+		
+		else {
+			btn.setText("OK");
+		}
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+new Practical28();
+	}
+
+}
