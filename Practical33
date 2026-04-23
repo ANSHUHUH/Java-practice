@@ -1,0 +1,46 @@
+package anshuhuh;
+
+import java.awt.*;
+import java.awt.event.*;
+public class Practical33 extends Frame implements KeyListener {
+  
+	Label l;
+	
+	public Practical33() {
+		setTitle("keyboard Event Example");
+		
+		l = new Label("press any key ");
+		l.setBounds(50, 100, 200, 30);
+		
+		add(l);
+		
+		addKeyListener(this);
+		
+		setSize(300,300);
+		setLayout(null);
+		setVisible(true);
+		
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent we) {
+				dispose();
+			}
+		});
+	}
+	
+
+	
+	public void keyPressed(KeyEvent e) {
+		l.setText("key Pressed"+ e.getKeyChar());
+	}
+	
+	public void keyReleased(KeyEvent e) {
+		l.setText("key released"+ e.getKeyChar());
+	}
+	public void keyTyped(KeyEvent e) {
+		l.setText("key keytyped"+ e.getKeyChar());
+	}
+
+	public static void main(String[] args) {
+		new Practical33();
+	}
+}
