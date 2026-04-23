@@ -1,0 +1,38 @@
+package anshuhuh;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+
+public class Practical37 extends JFrame implements AdjustmentListener{
+	JScrollBar sb;
+	JPanel panel;
+	 
+	Practical37(){
+		setTitle("color scrollbar");
+		panel = new JPanel();
+		
+		sb = new JScrollBar(JScrollBar.HORIZONTAL,0,0,0,360);
+		sb.addAdjustmentListener(this);
+		add(panel,BorderLayout.CENTER);
+		add(sb, BorderLayout.SOUTH);
+		
+		setSize(400,300);
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+public void adjustmentValueChanged(AdjustmentEvent e) {
+	int value = sb.getValue();
+	
+	float hue = value / 360.0f;
+	
+	Color color = Color.getHSBColor(hue, 1.0f, 1.0f);
+	
+	panel.setBackground(color);
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+new Practical37();
+	}
+
+}
