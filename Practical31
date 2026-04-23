@@ -1,0 +1,44 @@
+package anshuhuh;
+import javax.swing.*;
+
+import java.awt.Graphics;
+import java.awt.event.*;
+
+
+public class Practical31 extends JFrame{
+int x1 = -1,y1 = -1,x2 = -1,y2 = -1;
+int clickCount;
+
+Practical31(){
+	setTitle("draw line on click");
+	setSize(400,400);
+	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
+	addMouseListener(new MouseAdapter() {
+		public void mouseClicked(MouseEvent e) {
+			if(clickCount == 0) {
+				x1 = e.getX();
+				y1 = e.getY();
+				clickCount =1;
+			}else {
+				x2 = e.getX();
+				y2 = e.getY();
+				clickCount = 0;
+				repaint();
+			}
+		}
+	});
+	setVisible(true);
+}
+public void paint (Graphics g) {
+	super.paint(g);
+	if(x1 != -1 && x2 != -1) {
+		g.drawLine(x1, y1, x2, y2);
+	}
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+new Practical31();
+	}
+
+}
