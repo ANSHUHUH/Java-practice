@@ -1,0 +1,48 @@
+package awtpracticals;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Practical38 {
+
+	public static void main(String[] args) {
+		
+		JFrame frame = new JFrame("Login Page");
+        frame.setSize(350, 200);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new GridLayout(3, 2));
+
+        
+        JLabel user = new JLabel("Username:");
+        JTextField Text = new JTextField();
+
+        JLabel pass = new JLabel("Password:");
+        JPasswordField pText = new JPasswordField();
+
+        JButton lB = new JButton("Login");
+        JLabel mL = new JLabel("");
+
+       
+        frame.add(user);
+        frame.add(Text);
+        frame.add(pass);
+        frame.add(pText);
+        frame.add(lB);
+        frame.add(mL);
+
+        
+        lB.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String username = Text.getText();
+                String password = new String(pText.getPassword());
+            
+                if (username.equals("admin") && password.equals("1234")) {
+                    mL.setText("Login Successful!");
+                } else {
+                    mL.setText("Invalid Username ");
+                }
+            }
+        });
+        frame.setVisible(true);
+    }
+}
