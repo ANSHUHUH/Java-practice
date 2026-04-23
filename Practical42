@@ -1,0 +1,60 @@
+package awtpracticals;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+
+public class Practical42 extends JFrame {
+	Practical42(){
+		JLabel l1 = new JLabel("name : ");
+		JLabel l2 = new JLabel("gender");
+		JLabel l3 = new JLabel("countries");
+		
+		JTextField t1 = new JTextField(15);
+		
+		JRadioButton r1 = new JRadioButton("male");
+		JRadioButton r2 = new JRadioButton("female");
+		ButtonGroup bg = new ButtonGroup();
+		bg.add(r1);
+		bg.add(r2);
+		
+		String countries[] = {"india"," usa","uk"};
+		JComboBox cb = new JComboBox(countries);
+		
+		JButton b = new JButton("register");
+		
+		JLabel result = new JLabel("");
+		
+		setLayout(new FlowLayout());
+		add(l1);
+		add(t1);
+		add(l2);
+		add(r1);
+		add(r2);
+		add(l3);
+		add(cb);
+		add(b);
+		add(result);
+		
+		b.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent we) {
+				String name = t1.getText();
+				String gender ="";
+				if(r1.isSelected()) gender = "male";
+				else if(r2.isSelected()) gender ="female";
+				String country = cb.getSelectedItem().toString();
+				
+				result.setText("registered "+name+", "+gender+", "+country);
+			}
+		});
+		setSize(350,300);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+new Practical42();
+	}
+
+}
