@@ -1,0 +1,23 @@
+package anshuhuh;
+import java.io.*;
+public class Practical25 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+try {
+	FileInputStream fin = new FileInputStream("SRC.txt");
+	FileOutputStream fout = new FileOutputStream("DEST.txt");
+	int ch;
+	
+	while((ch = fin.read()) !=-1) {
+		fout.write(ch);
+	}
+	fin.close();
+	fout.close();
+	System.out.println("file content appended succesfully");
+}catch(Exception e) {
+	System.out.println("error : "+e);
+}
+	}
+
+}
