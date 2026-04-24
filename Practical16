@@ -1,0 +1,74 @@
+package anshuhuh;
+abstract class shape{
+	double r,h;
+	abstract void area();
+	abstract void volume();
+	
+}
+class sphere extends shape{
+	sphere(double r){
+		this.r=r;
+		
+	}
+	void area() {
+		double area =4*3.14;
+		System.out.println("surface area of sphere : "+area);
+	}
+	void volume() {
+		double volume =(4.0/3)*3.14*r*r*r;
+		System.out.println("volume of sphere : "+volume);
+	}
+}
+class cone extends shape{
+	cone(double r,double h){
+		this.r =r;
+		this.h =h;
+	}
+	void area() {
+		double l =  Math.sqrt(r*r+h*h);
+		double area = 3.14*r*r*(r+1);
+		System.out.println("surface of area oof cone"+area);
+	}
+	void volume() {
+		double volume = (1.0/3)*3.14*r*r*h;
+		System.out.println("volume of cone"+volume);
+	}
+}
+class cylinder extends shape{
+	cylinder(double r,double h){
+		this.r=r;
+		this.h=h;
+	}
+	void area() {
+		double area = 2*3.14*r*(r+h);
+		System.out.println("surface area of cylinder : "+area);
+	}
+	void volume() {
+		double volume = 3.14*r*r*h;
+		System.out.println("volume of cylinder "+volume);
+	}
+}
+public class Practical16 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+shape s;
+
+s= new sphere(3);
+s.area();
+s.volume();
+
+System.out.println();
+
+s=new cone(3,5);
+s.area();
+s.volume();
+
+System.out.println();
+
+s= new cylinder(3,5);
+s.area();
+s.volume();
+	}
+
+}
