@@ -1,0 +1,37 @@
+package anshuhuh;
+abstract class vehicle{
+	abstract void startengine();
+	abstract void stopengine();
+}
+class Car extends vehicle{
+	void startengine() {
+		System.out.println("car engine is starting");
+	}
+	void stopengine() {
+		System.out.println("car engine is stopping");
+	}
+}
+class motorcycle extends vehicle{
+	void startengine() {
+		System.out.println("motorcycle engine is starting");
+	}
+	void stopengine() {
+		System.out.println("motorcycle engine is stopping");
+	}
+}
+public class Practical14 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		vehicle v1 = new Car();
+		vehicle v2 = new motorcycle();
+
+v1.startengine();
+v1.stopengine();
+
+v2.startengine();
+v2.stopengine();
+
+	}
+
+}
